@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
+const path = require('path');
 
 const app = express();
 const PORT = 3001;
@@ -51,6 +52,10 @@ app.post('/send-email', async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 });
+
+// Serve static files AFTER defining API routes
+// This serves all files from the project directory
+app.use(express.static(__dirname));
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
