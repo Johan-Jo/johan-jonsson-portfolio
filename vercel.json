@@ -1,17 +1,4 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/vet-project",
-      "dest": "/vet-project/index.html"
-    },
-    {
-      "src": "/vet-project/(.*)",
-      "dest": "/vet-project/$1"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
