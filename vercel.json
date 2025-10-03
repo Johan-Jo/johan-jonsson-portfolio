@@ -1,15 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "vet-project/server.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "buildCommand": "echo 'Static site - no build required'",
+  "outputDirectory": ".",
   "routes": [
     {
       "src": "/",
@@ -20,8 +12,8 @@
       "dest": "/vet-project/index.html"
     },
     {
-      "src": "/vet-project/api/(.*)",
-      "dest": "/vet-project/server.js"
+      "src": "/vet-project/(.*)",
+      "dest": "/vet-project/$1"
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "name": "johan-jonsson-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website showcasing 14 years of design experience and Adobe Certified Instructor expertise",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - serve index.html'"
+  },
+  "keywords": [
+    "portfolio",
+    "design",
+    "web-design",
+    "ui-ux",
+    "adobe-certified"
+  ],
+  "author": "Johan Jonsson",
+  "license": "MIT"
+}
