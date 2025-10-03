@@ -1,8 +1,0 @@
-Create a landing page or a family vet clinic based on blue and white. Use a professional, elegant, showcase services and prices. Include a map with this address: Strada Maria Rosetti 26A, București 020487
-
-Add a sticky bar at the bottom with this phone number: 0720.123.123 and a message that says "call to make an appointment". Include a form in the hero area that will help users make an appointment: fields should be name, phone, email, message, and a 'send' button. 
-
-The main menu should scroll you down to that specific section. Add a top bar with social media profiles, phone number, and address. Use the images from this folder: "D:\project\vet-images"
-Add a testimonial section and use pictures of people from here: "D:\project\reviews"
-
-Create a text based logo. Use Next.js and Tailwind. We'll use Resend for the form. Once the website is completed, I will want to deploy it with Github and Vercel. Create a PRD so we can track everything.
