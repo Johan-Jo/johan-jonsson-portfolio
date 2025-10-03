@@ -1,3 +1,5 @@
 {
-  "version": 2
+  "version": 2,
+  "buildCommand": "cd vet-project && echo 'Static site - no build needed'",
+  "outputDirectory": "vet-project"
 }
