@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light background */
+    color: #1a1a1a; /* Dark text */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffffff; /* White header */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #007bff; /* Blue for navigation links */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero {
+    background-color: #007bff; /* Blue for hero */
+    color: #ffffff;
+}
+
+#about {
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+}
+
+#portfolio {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#skills {
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+}
+
+#reviews {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#contact {
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+}
+
+.portfolio-categories {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    background-color: #007bff; /* Blue button */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.category-btn:hover, .category-btn.active {
+    background-color: #0056b3; /* Darker blue on hover/active */
+    transform: translateY(-2px);
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.portfolio-item {
+    background-color: #ffffff; /* White item background */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item h3 {
+    color: #007bff; /* Blue heading */
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.skills-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.skills-list li {
+    background-color: #ffffff; /* White skill item */
+    padding: 15px;
+    border-radius: 5px;
+    color: #007bff; /* Blue text */
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills-list li:hover {
+    transform: scale(1.05);
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.review-item {
+    background-color: #ffffff; /* White review item */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.review-item:hover {
+    transform: translateY(-5px);
+}
+
+.review-item p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.review-item span {
+    font-weight: bold;
+    color: #007bff; /* Blue for client name */
+}
+
+.social-media a {
+    color: #007bff; /* Blue social media links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White form background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Lighter input background */
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #666666;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Blue focus border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.contact-form button {
+    background-color: #007bff; /* Blue button */
+    color: #ffffff;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+#hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    animation: slideInFromLeft 1.5s ease-out;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply to sections to animate on scroll */
+section:not(#hero) {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section:not(#hero).animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

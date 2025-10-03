@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment Confirmed - Family Vet Clinic</title>
+  <style>
+    :root{--blue:#0a67b1;--dark:#0b2a3d;--light:#f7fafc;--accent:#0fb7ff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0b2a3d;background:#ffffff;line-height:1.6}
+    a{color:var(--blue);text-decoration:none}
+    img{max-width:100%;display:block}
+    
+    .container{max-width:600px;margin:60px auto;padding:40px 20px;text-align:center}
+    .success-icon{width:80px;height:80px;margin:0 auto 24px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:40px}
+    .card{background:#fff;border:1px solid #e6eef5;border-radius:12px;box-shadow:0 6px 30px rgba(10,103,177,.08);padding:32px;margin:24px 0}
+    h1{color:var(--dark);margin:0 0 16px;font-size:32px}
+    .subtitle{color:#666;margin:0 0 32px;font-size:18px}
+    .info{text-align:left;background:var(--light);padding:20px;border-radius:8px;margin:24px 0}
+    .info h3{margin:0 0 12px;color:var(--dark)}
+    .info p{margin:0 0 8px}
+    .btn{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:14px 28px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;margin:8px}
+    .btn:hover{background:#095a98}
+    .btn-secondary{background:#f0f4f8;color:var(--dark);border:1px solid #cfe1ef}
+    .btn-secondary:hover{background:#e2e8f0}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:32px 0}
+    .step{padding:16px;background:#fff;border:1px solid #e6eef5;border-radius:8px}
+    .step-number{width:32px;height:32px;background:var(--blue);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:bold}
+    .contact-info{background:var(--light);padding:20px;border-radius:8px;margin:24px 0}
+    .contact-info h3{margin:0 0 16px;color:var(--dark)}
+    .contact-info p{margin:0 0 8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">✓</div>
+    
+    <h1>Appointment Request Received!</h1>
+    <p class="subtitle">Thank you for choosing Family Vet Clinic</p>
+    
+    <div class="card">
+      <div class="info">
+        <h3>What happens next?</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <strong>Review</strong>
+            <p>We'll review your request</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <strong>Contact</strong>
+            <p>We'll call you within 24 hours</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <strong>Confirm</strong>
+            <p>Schedule your appointment</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-info">
+        <h3>Need immediate assistance?</h3>
+        <p><strong>Phone:</strong> <a href="tel:+40720123123">0720.123.123</a></p>
+        <p><strong>Address:</strong> Strada Maria Rosetti 26A, București 020487</p>
+        <p><strong>Emergency:</strong> Available 24/7 for urgent cases</p>
+      </div>
+      
+      <div style="margin-top:32px;">
+        <a href="index.html" class="btn">Return to Homepage</a>
+        <a href="index.html#services" class="btn btn-secondary">View Our Services</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get the submitted name from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const submittedName = urlParams.get('name');
+    
+    if (submittedName) {
+      // Update the success message with the user's name
+      const title = document.querySelector('h1');
+      title.textContent = `Thank you, ${submittedName}!`;
+    }
+  </script>
+</body>
+</html>
+
+

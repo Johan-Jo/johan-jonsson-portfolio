@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johan Jonsson - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Johan Jonsson</h1>
+        <p>14 Years of Experience in Design | Adobe Certified Instructor</p>
+        <p>Specializing in Web and App Design</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Johan Jonsson from Surahammar, with 14 years of dedicated experience in the design industry. I am an Adobe Certified Instructor, passionate about creating intuitive and visually appealing web and app designs. My expertise lies in transforming complex ideas into elegant and user-friendly digital experiences.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="web">Web Design</button>
+            <button class="category-btn" data-category="app">App Design</button>
+            <button class="category-btn" data-category="ui">UI/UX</button>
+            <button class="category-btn" data-category="branding">Branding</button>
+        </div>
+        <div class="portfolio-items">
+            <!-- Placeholder images will be added here later -->
+            <div class="portfolio-item web">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=Web+Design+1" alt="Web Design 1">
+                <h3>Web Project 1</h3>
+            </div>
+            <div class="portfolio-item app">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=App+Design+1" alt="App Design 1">
+                <h3>App Project 1</h3>
+            </div>
+            <div class="portfolio-item ui">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=UI/UX+Project+1" alt="UI/UX Project 1">
+                <h3>UI/UX Project 1</h3>
+            </div>
+            <div class="portfolio-item branding">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=Branding+Project+1" alt="Branding Project 1">
+                <h3>Branding Project 1</h3>
+            </div>
+            <div class="portfolio-item web">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=Web+Design+2" alt="Web Design 2">
+                <h3>Web Project 2</h3>
+            </div>
+            <div class="portfolio-item app">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=App+Design+2" alt="App Design 2">
+                <h3>App Project 2</h3>
+            </div>
+            <div class="portfolio-item ui">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=UI/UX+Project+2" alt="UI/UX Project 2">
+                <h3>UI/UX Project 2</h3>
+            </div>
+            <div class="portfolio-item branding">
+                <img src="https://via.placeholder.com/300x200/e50000/ffffff?text=Branding+Project+2" alt="Branding Project 2">
+                <h3>Branding Project 2</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <ul>
+                <li>Web Design</li>
+                <li>App Design</li>
+                <li>UI/UX Design</li>
+                <li>Adobe Creative Suite (Photoshop, Illustrator, XD)</li>
+                <li>Wireframing & Prototyping</li>
+                <li>Front-end Development (HTML, CSS, JavaScript)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>What Clients Say</h2>
+        <div class="reviews-container">
+            <div class="review-item">
+                <p>"Johan delivered an outstanding website for our startup. His attention to detail and creative solutions were exceptional!"</p>
+                <span>- Sarah M., Tech Startup CEO</span>
+            </div>
+            <div class="review-item">
+                <p>"As an Adobe Certified Instructor, Johan's knowledge is unparalleled. He transformed our app's user experience."</p>
+                <span>- David L., Product Manager</span>
+            </div>
+            <div class="review-item">
+                <p>"Professional, efficient, and incredibly talented. Johan is our go-to for all design needs."</p>
+                <span>- Emily R., Marketing Director</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="map-container">
+            <iframe
+                src="https://maps.google.com/maps?q=Soseaua%20Giurgiului%20230,%20sector%204,%20Bucuresti&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <p>Phone: 0720.123.123</p>
+        <div class="social-media">
+            <a href="https://linkedin.com/in/johanjonsson" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/johanjonsson" target="_blank">Twitter</a>
+            <a href="https://dribbble.com/johanjonsson" target="_blank">Dribbble</a>
+            <a href="https://behance.net/johanjonsson" target="_blank">Behance</a>
+        </div>
+        <!-- Contact form will go here later -->
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
