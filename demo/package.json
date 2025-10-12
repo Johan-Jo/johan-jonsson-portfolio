@@ -1,0 +1,14 @@
+{
+  "name": "protein-analyzer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Daily protein intake analyzer using OpenAI",
+  "main": "protein-analyzer.js",
+  "scripts": {
+    "start": "node protein-analyzer.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
+
