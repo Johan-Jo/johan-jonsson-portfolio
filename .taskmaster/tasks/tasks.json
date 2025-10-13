@@ -60,7 +60,7 @@
         "id": 6,
         "title": "Add image generation capability with mode toggle",
         "description": "Implement OpenAI image generation using gpt-image-1 model with a UI toggle to switch between text and image modes.",
-        "status": "pending",
+        "status": "done",
         "priority": "medium",
         "dependencies": [4, 5],
         "details": "- Create toggle component to switch between text and image modes\n- Implement OpenAI image generation API integration using gpt-image-1\n- Add Edge Function for image generation requests\n- Display generated images in the message list\n- Store image URLs in database along with messages\n- Update UI to show different input placeholder based on mode\n- Add loading state for image generation (usually slower than text)",
