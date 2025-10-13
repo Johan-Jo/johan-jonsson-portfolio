@@ -1,0 +1,123 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Set up NextJS project with TailwindCSS and ShadUI",
+        "description": "Initialize the project structure with NextJS App Directory, configure TailwindCSS, and set up ShadUI components for the UI foundation.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "details": "- Create NextJS app with App Directory structure\n- Install and configure TailwindCSS\n- Set up ShadUI component library\n- Configure initial project settings and environment variables\n- Create basic folder structure for components, pages, and utilities",
+        "testStrategy": "Verify that the NextJS dev server starts successfully, TailwindCSS classes are applied correctly, and ShadUI components can be imported and rendered.",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Set up Supabase local instance and database schema",
+        "description": "Initialize Supabase locally, create database migrations for chat sessions and messages tables, and configure the connection.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [1],
+        "details": "- Initialize Supabase CLI and start local instance\n- Create migration for chat_sessions table (id, created_at, updated_at, title)\n- Create migration for chat_messages table (id, created_at, chat_id, role, content, type, image_url)\n- Set up RLS policies for both tables\n- Test database connection from NextJS",
+        "testStrategy": "Run migrations successfully, verify tables exist in local Supabase, test basic CRUD operations on both tables.",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Create basic chat UI layout and components",
+        "description": "Build the main chat interface with message display area, input field, and send button using React and TailwindCSS.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [1],
+        "details": "- Create ChatContainer component for the main layout\n- Build MessageList component to display conversation history\n- Create MessageBubble component with distinct styling for user vs AI messages\n- Build ChatInput component with textarea and send button\n- Implement basic state management for messages using React hooks\n- Style components with TailwindCSS following clean, minimal design",
+        "testStrategy": "Verify UI renders correctly, input accepts text, messages can be added to state and displayed in the message list.",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Implement OpenAI GPT-4.1-nano text streaming",
+        "description": "Integrate OpenAI API for text generation with streaming responses using the gpt-4.1-nano-2025-04-14 model.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [2, 3],
+        "details": "- Create Supabase Edge Function for OpenAI API calls\n- Implement streaming response handling using OpenAI's streaming API\n- Set up proper error handling for API failures and rate limits\n- Configure environment variables for OpenAI API key\n- Implement token-by-token rendering in the UI\n- Add loading states while streaming",
+        "testStrategy": "Send a test message and verify streaming responses appear in real-time, check error handling for invalid API keys or rate limits.",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Integrate message storage with Supabase",
+        "description": "Connect the chat functionality to Supabase database to persist all messages and chat sessions.",
+        "status": "done",
+        "priority": "medium",
+        "dependencies": [2, 4],
+        "details": "- Create functions to save messages to chat_messages table\n- Implement chat session creation and management\n- Auto-generate chat title from first message\n- Load existing chat history on component mount\n- Update timestamps appropriately\n- Handle database errors gracefully",
+        "testStrategy": "Send messages and verify they're saved to Supabase, refresh page and confirm messages persist, check that chat sessions are created correctly.",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Add image generation capability with mode toggle",
+        "description": "Implement OpenAI image generation using gpt-image-1 model with a UI toggle to switch between text and image modes.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [4, 5],
+        "details": "- Create toggle component to switch between text and image modes\n- Implement OpenAI image generation API integration using gpt-image-1\n- Add Edge Function for image generation requests\n- Display generated images in the message list\n- Store image URLs in database along with messages\n- Update UI to show different input placeholder based on mode\n- Add loading state for image generation (usually slower than text)",
+        "testStrategy": "Toggle to image mode, submit an image prompt, verify image is generated and displayed, confirm image URL is saved to database.",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Implement 'New Chat' functionality",
+        "description": "Add ability to start a new conversation while preserving previous chat history in the database.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [5],
+        "details": "- Add 'New Chat' button to the UI\n- Implement function to save current chat session\n- Clear the message state to start fresh conversation\n- Create new chat_session record in database\n- Reset UI state (input, mode, etc.)\n- Provide visual feedback for the action",
+        "testStrategy": "Click 'New Chat' button, verify current messages are saved, confirm new empty chat interface appears, check database for both old and new chat sessions.",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Add error handling and user feedback mechanisms",
+        "description": "Implement comprehensive error handling for API failures, rate limits, and network issues with proper user notifications.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [4, 6],
+        "details": "- Create error notification component (toast/alert)\n- Handle OpenAI API rate limit errors with user-friendly messages\n- Implement retry logic for failed requests\n- Add network error detection and feedback\n- Handle edge cases (empty inputs, long messages, etc.)\n- Provide clear error messages for different failure scenarios\n- Add error boundaries to prevent app crashes",
+        "testStrategy": "Trigger various error conditions (invalid API key, rate limits, network disconnection) and verify appropriate error messages are shown to users.",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Enhance UI with loading states and improved styling",
+        "description": "Polish the user interface with loading indicators, smooth transitions, and responsive design improvements.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [3, 6, 7],
+        "details": "- Add loading spinner/skeleton for message streaming\n- Implement loading state for image generation\n- Add smooth scroll to newest message\n- Improve responsive design for mobile devices\n- Add hover states and visual feedback for interactive elements\n- Enhance color scheme and typography\n- Add subtle animations for message appearance\n- Ensure accessibility (keyboard navigation, ARIA labels)",
+        "testStrategy": "Test on different screen sizes, verify loading states appear during operations, check animations are smooth, ensure keyboard navigation works.",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Optimize performance and ensure cross-browser compatibility",
+        "description": "Test and optimize the application for performance, fix any browser-specific issues, and ensure consistent experience across platforms.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [8, 9],
+        "details": "- Test in Chrome, Firefox, Safari, and Edge browsers\n- Optimize re-renders using React.memo and useMemo where appropriate\n- Implement code splitting for better load times\n- Minimize API calls and implement request debouncing\n- Test and fix any CSS inconsistencies across browsers\n- Ensure mobile browser compatibility\n- Add performance monitoring for streaming responses\n- Profile and optimize bundle size",
+        "testStrategy": "Run the app in all major browsers, use browser dev tools to check for performance issues, verify consistent UI across platforms, measure and optimize load times.",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-01-12T10:53:00.000Z",
+      "lastUpdated": "2025-10-12T19:00:00.000Z",
+      "version": "1.0.0",
+      "description": "GPT-Powered Chatbot with Image Generation - Tasks for master context",
+      "updated": "2025-10-12T19:00:00.000Z"
+    }
+  }
+}
