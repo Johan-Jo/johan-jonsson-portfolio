@@ -1,0 +1,112 @@
+{
+  "name": "compose_job",
+  "description": "Tolkar en användarfras och bygger ett arbetsflöde (pipeline) av MEPS-steg med beroenden och kvantiteter.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "job_label": {
+        "type": "string",
+        "description": "Sammanfattning, t.ex. 'Väggmålning med i- och påspackling + 2 strykningar'"
+      },
+      "surface": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "vägg",
+              "tak",
+              "dörr",
+              "snickeri",
+              "golv",
+              "annat"
+            ]
+          },
+          "area": {
+            "type": "number"
+          },
+          "area_unit": {
+            "type": "string",
+            "enum": [
+              "kvm",
+              "m2"
+            ]
+          },
+          "length": {
+            "type": "number"
+          },
+          "length_unit": {
+            "type": "string",
+            "enum": [
+              "lpm",
+              "meter"
+            ]
+          },
+          "sides": {
+            "type": "string",
+            "enum": [
+              "en_sida",
+              "båda_sidor",
+              "ej_applicerbart"
+            ]
+          }
+        }
+      },
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "step_id": {
+              "type": "string"
+            },
+            "intent_id": {
+              "type": "string"
+            },
+            "intent_label": {
+              "type": "string"
+            },
+            "quantity": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "depends_on": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "step_id",
+            "intent_id",
+            "intent_label"
+          ]
+        }
+      },
+      "coats": {
+        "type": "integer",
+        "description": "Antal täckstrykningar om relevant"
+      },
+      "spackle_passes": {
+        "type": "integer",
+        "description": "Antal spackelomgångar om relevant"
+      },
+      "includes_cleaning": {
+        "type": "boolean"
+      },
+      "includes_masking": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "job_label",
+      "steps"
+    ]
+  }
+}

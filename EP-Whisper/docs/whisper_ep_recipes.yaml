@@ -1,0 +1,84 @@
+# Whisper-EP Recipes för sammansatta moment
+# Varje recipe definierar en ordnad pipeline av MEPS-steg.
+# MEPS-koder är exempel och kan justeras till era interna koder.
+
+recipes:
+  WALL_PAINT_STANDARD:
+    label: "Vägg: tvätt → skarvspackling+slip → bredspackling 2 ggr → målning 2 strykningar"
+    surface: vägg
+    steps:
+      - key: CLEAN
+        intent_id: MEPS-3421524
+        intent_label: "Innervägg rensning, tvättning och borstning"
+      - key: JOINT_FILL
+        intent_id: MEPS-2581523
+        intent_label: "Innervägg skarvspackling samt slipning"
+        depends_on: [CLEAN]
+      - key: SKIM_1
+        intent_id: MEPS-2611526
+        intent_label: "Innervägg bredspackling, 2 gånger"
+        depends_on: [JOINT_FILL]
+      - key: SKIM_2
+        intent_id: MEPS-2611526
+        intent_label: "Innervägg bredspackling, 2 gånger"
+        depends_on: [SKIM_1]
+      - key: PAINT_1
+        intent_id: MEPS-2611533
+        intent_label: "Innervägg målning, 2 strykningar (akrylat)"
+        depends_on: [SKIM_2]
+      - key: PAINT_2
+        intent_id: MEPS-2611533
+        intent_label: "Innervägg målning, 2 strykningar (akrylat)"
+        depends_on: [PAINT_1]
+
+  CEILING_PAINT_2COATS_WITH_MASK:
+    label: "Tak: maskera → målning 2 strykningar"
+    surface: tak
+    steps:
+      - key: MASK_FLOOR
+        intent_id: MEPS-14939
+        intent_label: "Täck och maskera golv"
+      - key: PAINT_1
+        intent_id: MEPS-2971524
+        intent_label: "Målning innertak, 2 strykningar"
+        depends_on: [MASK_FLOOR]
+      - key: PAINT_2
+        intent_id: MEPS-2971524
+        intent_label: "Målning innertak, 2 strykningar"
+        depends_on: [PAINT_1]
+
+  DOOR_ONE_SIDE_2COATS_PACKAGE:
+    label: "Dörr: en sida tvätt + spackel + 2 strykningar"
+    surface: dörr
+    steps:
+      - key: CLEAN
+        intent_id: MEPS-3421524
+        intent_label: "Rengöring (applicerat på dörrblad)"
+      - key: FILL
+        intent_id: MEPS-2611526
+        intent_label: "Spackling/påspackling dörryta"
+        depends_on: [CLEAN]
+      - key: PAINT_1
+        intent_id: MEPS-3391523
+        intent_label: "Dörrpaket (en sida) målning 2 strykningar"
+        depends_on: [FILL]
+      - key: PAINT_2
+        intent_id: MEPS-3391523
+        intent_label: "Dörrpaket (en sida) målning 2 strykningar"
+        depends_on: [PAINT_1]
+
+  SOFT_SEAL_WITHOUT_TAPE:
+    label: "Mjukfogning tak/golv utan tejpning"
+    surface: annat
+    steps:
+      - key: SEAL
+        intent_id: MEPS-3481524
+        intent_label: "Mjukfogning innertak+golv"
+
+  SOFT_SEAL_WITH_TAPE:
+    label: "Mjukfogning tak/golv inklusive tejpning"
+    surface: annat
+    steps:
+      - key: SEAL
+        intent_id: MEPS-3481523
+        intent_label: "Mjukfogning innertak+golv inkl tejpning"

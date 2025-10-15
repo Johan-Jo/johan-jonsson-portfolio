@@ -1,0 +1,8 @@
+utterance,recipe_hint,coats,spackle_passes,includes_cleaning,includes_masking,expected_steps_order
+"måla vägg, i- och påspackling samt 2 strykningar 45 kvm",WALL_PAINT_STANDARD,2,2,TRUE,FALSE,CLEAN|JOINT_FILL|SKIM_1|SKIM_2|PAINT_1|PAINT_2
+"tvätta vägg, skarvspackla och slipa, bredspackla två gånger, måla 2 lager 30 m2",WALL_PAINT_STANDARD,2,2,TRUE,FALSE,CLEAN|JOINT_FILL|SKIM_1|SKIM_2|PAINT_1|PAINT_2
+"måla tak 2 strykningar, maskera golv 20 kvm",CEILING_PAINT_2COATS_WITH_MASK,2,,FALSE,TRUE,MASK_FLOOR|PAINT_1|PAINT_2
+måla dörr en sida två strykningar efter spackling,DOOR_ONE_SIDE_2COATS_PACKAGE,2,1,TRUE,FALSE,CLEAN|FILL|PAINT_1|PAINT_2
+mjukfogning tak/golv 12 meter utan tejpning,SOFT_SEAL_WITHOUT_TAPE,,,FALSE,FALSE,SEAL
+mjukfogning tak/golv inkl tejpning 10 lpm,SOFT_SEAL_WITH_TAPE,,,FALSE,FALSE,SEAL
+"rengör väggar, spackla skarvar och måla 2 lager 25 kvm",WALL_PAINT_STANDARD,2,,TRUE,FALSE,CLEAN|JOINT_FILL|SKIM_1|SKIM_2|PAINT_1|PAINT_2
