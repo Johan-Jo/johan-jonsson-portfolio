@@ -186,3 +186,4 @@ If you encounter issues:
 
 **Tip:** The voice interface is designed for Swedish language input. Speaking in other languages may result in poor recognition or low confidence scores.
 
+
