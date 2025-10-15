@@ -1,0 +1,5 @@
+(node:25104) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[FastMCP warning] could not infer client capabilities after 10 attempts. Connection may be unstable.
+{"method":"notifications/message","params":{"data":{"message":"MCP Server connected: undefined"},"level":"info"},"jsonrpc":"2.0"}
+{"method":"notifications/message","params":{"data":{"message":"MCP session missing required sampling capabilities, providers not registered"},"level":"info"},"jsonrpc":"2.0"}
